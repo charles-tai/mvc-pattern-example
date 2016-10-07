@@ -1,0 +1,68 @@
+{
+  "product_pairings":[
+    {
+      "paired_product":{
+        "id":1569,
+        "producible_id":33,
+        "producible_type":"Wine",
+        "producible":{
+          "type":"wine",
+          "wine":{
+            "acid":6,
+            "alcohol":null,
+            "alcohol_by_volume":14.4,
+            "appearance":"White",
+            "aromas":null,
+            "body":3,
+            "bottle_image_url":"//media.blueapron.com/wine/33/bottle_images/lichen-plank-sillo.png",
+            "classic_pairings":"Viognier\u2019s perfumed aromas pair with equally aromatic meals from around the world, like Korean cuisine, ramen or other spicy meals, while its buttery notes are a natural complement to roast chicken. ",
+            "description":"From humble beginnings in the early 1970s in a chartreuse-lichen-covered barn overlooking their namesake vineyard, sailing friends Michael Benedict and Richard Sanford launched Santa Barbara\u2019s wine industry, proving to skeptics that wine could thrive along California\u2019s cool Central Coast. Although no longer owned by the two founders, the vineyard is the oldest in the Santa Rita Hills and considered one of California\u2019s five top vineyards by Wine Enthusiast.",
+            "earth":null,
+            "fruit":null,
+            "fun_facts":"The current winery, made with more than 180,000 handmade adobe blocks, is believed to be the largest handmade-adobe construction in California since the Spanish missions were built.",
+            "id":33,
+            "is_complete":true,
+            "label_image_url":null,
+            "max_serve_temperature":null,
+            "min_serve_temperature":null,
+            "name":"Lichen Plank",
+            "oak":"Neutral French oak",
+            "product_id":1569,
+            "slug":"sanford-benedict-vineyard-viognier-2014",
+            "soil":"Chert loam",
+            "sweetness":0,
+            "tannins":0,
+            "taste":"",
+            "year":2014,
+            "varietals":[
+              {
+                "id":7,
+                "name":"Viognier"
+              }
+            ],
+            "vineyard":{
+              "name":"Sanford \u0026 Benedict Vineyard",
+              "id":30,
+              "description":"",
+              "image_url":null,
+              "region_id":28,
+              "created_at":"2016-01-29T02:58:28Z",
+              "updated_at":"2016-01-29T02:58:28Z",
+              "region":{
+                "created_at":"2016-01-29T02:46:39Z",
+                "description":"",
+                "id":28,
+                "image":{
+                  "url":"//media.blueapron.com/regions/28/images/BA_AVA_Map_santa-rita-hills-cali-white.png"
+                },
+                "name":"Santa Rita Hills - White",
+                "parent_id":null,
+                "updated_at":"2016-01-29T02:46:39Z"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "product_pairings":[
+    {
+      "paired_product":{
+        "id":1568,
+        "producible_id":32,
+        "producible_type":"Wine",
+        "producible":{
+          "type":"wine",
+          "wine":{
+            "acid":6,
+            "alcohol":0,
+            "alcohol_by_volume":13.1,
+            "appearance":"White",
+            "aromas":null,
+            "body":3,
+            "bottle_image_url":"//media.blueapron.com/wine/32/bottle_images/die-fontein-sillo.png",
+            "classic_pairings":"Sauvignon Blanc\u2019s acidity acts like a squeeze of fresh lemon, cutting through buttery meals, balancing the saltiness of fried food and emphasizing lemony notes.",
+            "description":"French Protestant settlers made the first wines in cool, sunny Stellenbosch in the late 1600s, but the largest region in what is today South Africa needed 300 years to gain global recognition. Among the believers was farmer Wally Roux, who started growing grapes for nearby wineries 50 years ago. Brothers Marius and Japie are now in charge, cultivating the grapes for this crisp, zesty Sauvignon Blanc on the farm their dad, Wally, established.",
+            "earth":null,
+            "fruit":null,
+            "fun_facts":"Constantia, a highly coveted dessert wine during the eighteenth and nineteenth centuries, was the first South African wine to gain international fame.",
+            "id":32,
+            "is_complete":true,
+            "label_image_url":null,
+            "max_serve_temperature":null,
+            "min_serve_temperature":null,
+            "name":"Die Fonteine",
+            "oak":"Stainless steel (no oak)",
+            "product_id":1568,
+            "slug":"die-fonteine-farm-sauvignon-blanc-2015",
+            "soil":"Various",
+            "sweetness":0,
+            "tannins":0,
+            "taste":"",
+            "year":2015,
+            "varietals":[
+              {
+                "id":3,
+                "name":"Sauvignon Blanc"
+              }
+            ],
+            "vineyard":{
+              "name":"Die Fonteine Farm",
+              "id":3,
+              "description":"",
+              "image_url":null,
+              "region_id":3,
+              "created_at":"2015-11-17T20:12:07Z",
+              "updated_at":"2015-11-17T20:12:07Z",
+              "region":{
+                "created_at":"2015-11-17T20:02:21Z",
+                "description":"",
+                "id":3,
+                "image":{
+                  "url":"//media.blueapron.com/regions/3/images/BA_AVA_Map_Stellenbac-south-africa_white.png"
+                },
+                "name":"Stellenbosch - White",
+                "parent_id":null,
+                "updated_at":"2015-11-17T20:02:21Z"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

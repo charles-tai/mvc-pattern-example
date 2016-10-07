@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Example - Recipe</title>
+
+  <link href="../assets/_defaults/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/_defaults/css/default.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <div class="content-wrap">
+      <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+          <div class="recipe">
+            <img class="recipe__img" src="../assets/images/placeholder.jpg" alt="Recipe Title">
+
+            <div class="recipe__description">
+              <h2 class="recipe__title">"Recipe Title"</h2>
+              <h3 class="recipe__subtitle">"Recipe Subtitle"</h3>
+            </div>
+
+            <button class="btn btn-default">
+              <img class="icon-wine mr-5" src="../assets/images/icon-wine.png" alt="">
+              View Wine Pairing
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Example HandleBars Template -->
+  <script id="recipe-template" type="text/x-handlebars-template">
+    <div class="col-md-4">
+      <div class="recipe">
+        <img class="recipe__img" src="{{image_url}}" alt="{{image_alt_text}}">
+
+        <div class="recipe__description">
+          <h2 class="recipe__title">{{title}}</h2>
+          <h3 class="recipe__subtitle">{{subtitle}}</h3>
+        </div>
+
+        <button class="btn btn-default">
+          <img class="icon-wine mr-5" src="../assets/images/icon-wine.png" alt="">
+          View Wine Pairing
+        </button>
+      </div>
+    </div>
+  </script>
+</body>
+</html>

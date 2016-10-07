@@ -1,0 +1,68 @@
+{
+  "product_pairings":[
+    {
+      "paired_product":{
+        "id":1571,
+        "producible_id":35,
+        "producible_type":"Wine",
+        "producible":{
+          "type":"wine",
+          "wine":{
+            "acid":5,
+            "alcohol":null,
+            "alcohol_by_volume":13.6,
+            "appearance":"Red",
+            "aromas":null,
+            "body":8,
+            "bottle_image_url":"//media.blueapron.com/wine/35/bottle_images/lloyd-mcqueen-petite-sirah_sillo.png",
+            "classic_pairings":"Hearty wines should be paired with foods of equal weight, which can be diverse in terms of flavor. Enjoy this wine with rich steakhouse staples or Mexican dishes with layers of spice. ",
+            "description":"When Irish dairy farmer Lloyd McQueen immigrated to California in the 1930s, he didn\u2019t expect to join the region\u2019s burgeoning wine industry. But he quickly found his niche growing Carignane and Zinfandel grapes in the heart of Suisun Valley. These viticultural roots are strong, as McQueen\u2019s grandson and great-grandson, Howard and Brian Babcock, currently farm his Morrison Lane Vineyard, home to this bold, earthy Petite Sirah.",
+            "earth":null,
+            "fruit":null,
+            "fun_facts":"Ninety percent of the Petite Sirah grown in the U.S. is actually a French blending grape called Durif, which is now rarely found in its native country.",
+            "id":35,
+            "is_complete":true,
+            "label_image_url":null,
+            "max_serve_temperature":null,
+            "min_serve_temperature":null,
+            "name":"Lloyd McQueen",
+            "oak":"French oak",
+            "product_id":1571,
+            "slug":"morrison-lane-vineyard-petite-sirah-2013",
+            "soil":"Sycamore loam with volcanic",
+            "sweetness":0,
+            "tannins":7,
+            "taste":"",
+            "year":2013,
+            "varietals":[
+              {
+                "id":20,
+                "name":"Petite Sirah"
+              }
+            ],
+            "vineyard":{
+              "name":"Morrison Lane Vineyard",
+              "id":26,
+              "description":"",
+              "image_url":null,
+              "region_id":29,
+              "created_at":"2016-01-29T02:54:24Z",
+              "updated_at":"2016-01-29T02:54:24Z",
+              "region":{
+                "created_at":"2016-01-29T02:47:57Z",
+                "description":"",
+                "id":29,
+                "image":{
+                  "url":"//media.blueapron.com/regions/29/images/suisun-valley-california_red.png"
+                },
+                "name":"Suisun Valley - Red",
+                "parent_id":null,
+                "updated_at":"2016-01-29T02:47:57Z"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

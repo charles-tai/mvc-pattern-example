@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Example - Wine Modal</title>
+
+  <link href="../assets/_defaults/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/_defaults/css/default.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <div class="content-wrap">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <div class="wine">
+            <h2 class="wine__title text-center">
+              <img class="mr-10" src="../assets/images/icon-wine-lg.png" alt="">
+              Lloyd McQueen Petite Sirah 2013
+            </h2>
+
+            <div class="row">
+              <div class="col-md-4 text-center">
+                <img class="wine-modal__image" src="../assets/images/wine-placeholder.png" alt="">
+              </div>
+
+              <div class="col-md-8">
+                <h4>Description</h4>
+                <p>When Irish dairy farmer Lloyd McQueen immigrated to California in the 1930s, he didn’t expect to join the region’s burgeoning wine industry. But he quickly found his niche growing Carignane and Zinfandel grapes in the heart of Suisun Valley. These viticultural roots are strong, as McQueen’s grandson and great-grandson, Howard and Brian Babcock, currently farm his Morrison Lane Vineyard, home to this bold, earthy Petite Sirah.</p>
+
+                <div class="fun-fact">
+                  <h4 class="fun-fact__title">Fun Fact</h4>
+                  <p>Ninety percent of the Petite Sirah grown in the U.S. is actually a French blending grape called Durif, which is now rarely found in its native country.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Example HandleBars Template -->
+  <script id="recipe-template" type="text/x-handlebars-template">
+    <div class="wine">
+      <h2 class="wine__title text-center">
+        <img class="mr-10" src="../assets/images/icon-wine-lg.png" alt="">
+        {{name}} {{varietals_name}} {{year}}
+      </h2>
+
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <img class="mr-10" src="{{image_url}}" alt="{{image_alt_text}}">
+        </div>
+
+        <div class="col-md-8">
+          <h4>Description</h4>
+          <p>{{description}}</p>
+
+          <div class="fun-fact">
+            <h4 class="fun-fact__title">Fun Fact</h4>
+            <p>{{fun_fact}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </script>
+</body>
+</html>

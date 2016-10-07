@@ -1,0 +1,68 @@
+{
+  "product_pairings":[
+    {
+      "paired_product":{
+        "id":1570,
+        "producible_id":34,
+        "producible_type":"Wine",
+        "producible":{
+          "type":"wine",
+          "wine":{
+            "acid":4,
+            "alcohol":null,
+            "alcohol_by_volume":14.4,
+            "appearance":"White",
+            "aromas":null,
+            "body":5,
+            "bottle_image_url":"//media.blueapron.com/wine/34/bottle_images/Ordways-sillo.png",
+            "classic_pairings":"Gewu\u0308rztraminer can stand in for the Caribbean\u2019s traditional drink, rum: Both balance out jerk spices with sweetness. Gewu\u0308rtz\u2019s aromatics also complement the spices in Indian and other Asian cuisines.",
+            "description":"Behind every great wine is a guy on a tractor. At Ordway\u2019s Valley Foothill Vineyard in Mendocino, California, vineyard manager Casey Hartlip is that guy, in charge of 180 acres of dirt. \u201cThese soils are 60 inches deep,\u201d he says. \u201cThey\u2019re well-balanced and easy to work with.\u201d Gewu\u0308rztraminer, an Alsatian white that\u2019s very fragrant, does particularly well in this area. \u201cTo keep the aromatics popping, we don\u2019t give them too much sunlight,\u201d he says. \u201cThey are truly exceptional.\u201d",
+            "earth":null,
+            "fruit":null,
+            "fun_facts":"Renowned for its ancient redwoods, Mendocino is also recognized today for its wine grapes: Of the 17,000 acres of vineyards in the county, 25 percent of them grow certified organic grapes.",
+            "id":34,
+            "is_complete":true,
+            "label_image_url":null,
+            "max_serve_temperature":null,
+            "min_serve_temperature":null,
+            "name":"Hungry Hollow",
+            "oak":"Stainless steel (no oak)",
+            "product_id":1570,
+            "slug":"ordway-s-valley-foothill-vineyard-gewurztraminer-2014",
+            "soil":"Pinole loam",
+            "sweetness":4,
+            "tannins":0,
+            "taste":"",
+            "year":2014,
+            "varietals":[
+              {
+                "id":19,
+                "name":"Gew\u00fcrztraminer"
+              }
+            ],
+            "vineyard":{
+              "name":"Ordway's Valley Foothill Vineyard",
+              "id":29,
+              "description":"",
+              "image_url":null,
+              "region_id":27,
+              "created_at":"2016-01-29T02:57:50Z",
+              "updated_at":"2016-01-29T02:57:50Z",
+              "region":{
+                "created_at":"2016-01-29T02:46:02Z",
+                "description":"",
+                "id":27,
+                "image":{
+                  "url":"//media.blueapron.com/regions/27/images/anderson-valley-cali_white.png"
+                },
+                "name":"Anderson Valley - White",
+                "parent_id":null,
+                "updated_at":"2016-01-29T02:46:02Z"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

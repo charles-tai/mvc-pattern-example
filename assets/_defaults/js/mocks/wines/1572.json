@@ -1,0 +1,68 @@
+{
+  "product_pairings":[
+    {
+      "paired_product":{
+        "id":1572,
+        "producible_id":36,
+        "producible_type":"Wine",
+        "producible":{
+          "type":"wine",
+          "wine":{
+            "acid":5,
+            "alcohol":null,
+            "alcohol_by_volume":15.2,
+            "appearance":"Red",
+            "aromas":null,
+            "body":8,
+            "bottle_image_url":"//media.blueapron.com/wine/36/bottle_images/Toccata-sillo.png",
+            "classic_pairings":"This elegant red has the body to stand up to the bitter flavors of brassicas\u2014such as turnips and broccoli\u2014but doesn\u2019t overwhelm meatless meals, while the plum aromas enhance the flavor of red fruits. ",
+            "description":"This Santa Barbara County Super Tuscan red has legitimate Italian roots. Joe Carrari, the 81-year-old son of Italian immigrants, first planted these vineyards decades ago, and later sold his vineyard to Louis \u201cThe Dirtman\u201d Lucas. He used his pruning prowess and extensive knowledge to renovate and revitalize the vineyard, primarily by trellising each varietal differently to enhance the flavors of the grapes. The warm summer days and cool coastal nights of the Los Alamos Valley provide the perfect growing environment, allowing for the production of aromatic, full-flavored wine that maintains varietal character.",
+            "earth":null,
+            "fruit":null,
+            "fun_facts":"Italy\u2019s Chianti was originally required to include 10 percent white wine, but winemakers who disliked this rule created the Super Tuscan, an alternative that contains only red.",
+            "id":36,
+            "is_complete":true,
+            "label_image_url":null,
+            "max_serve_temperature":null,
+            "min_serve_temperature":null,
+            "name":"Toccata",
+            "oak":"New and neutral oak",
+            "product_id":1572,
+            "slug":"67-valley-view-vineyard-33-los-alamos-view-vineyard-super-tuscan-blend-2013",
+            "soil":"Santa Ynez clay loam",
+            "sweetness":0,
+            "tannins":7,
+            "taste":"",
+            "year":2013,
+            "varietals":[
+              {
+                "id":21,
+                "name":"Super Tuscan Blend"
+              }
+            ],
+            "vineyard":{
+              "name":"67% Valley View Vineyard, 33% Los Alamos View Vineyard",
+              "id":27,
+              "description":"",
+              "image_url":null,
+              "region_id":26,
+              "created_at":"2016-01-29T02:55:51Z",
+              "updated_at":"2016-01-29T02:56:14Z",
+              "region":{
+                "created_at":"2015-12-31T03:25:21Z",
+                "description":"",
+                "id":26,
+                "image":{
+                  "url":"//media.blueapron.com/regions/26/images/BA_AVA_Map_santa-barbara-county_red.png"
+                },
+                "name":"Santa Barbara County - Red",
+                "parent_id":null,
+                "updated_at":"2016-01-12T17:18:47Z"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

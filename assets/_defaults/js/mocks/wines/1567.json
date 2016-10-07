@@ -1,0 +1,68 @@
+{
+  "product_pairings":[
+    {
+      "paired_product":{
+        "id":1567,
+        "producible_id":31,
+        "producible_type":"Wine",
+        "producible":{
+          "type":"wine",
+          "wine":{
+            "acid":5,
+            "alcohol":null,
+            "alcohol_by_volume":14.5,
+            "appearance":"Red",
+            "aromas":null,
+            "body":5,
+            "bottle_image_url":"//media.blueapron.com/wine/31/bottle_images/babcock-sillo.png",
+            "classic_pairings":"Fruit can dress up winter pork dishes and add contrast to earthy stews. We\u2019re using this fruit-forward Pinot the same way. This wine\u2019s ripe-berry flavors can also enhance sweet ingredients, like a maple glaze. ",
+            "description":"California\u2019s Santa Rita Hills, home to the Babcock Vineyard, is Mecca for Pinot Noir lovers. Despite accolades from across the industry, owner Bryan Babcock is modest. \u201cPinot is rewardingly mysterious,\u201d he says, \u201cbut you never feel like you make a perfect one.\u201d We think Pinot is one of the most flexible reds around, pairing with a wide variety of meat, fish and vegetarian meals in a way other reds can\u2019t. Babcock puts it more bluntly: \u201cIf you have a corkscrew, any dish will do.\u201d",
+            "earth":null,
+            "fruit":null,
+            "fun_facts":"Pinot Noir is one of the first, or \u201cfounder,\u201d varieties of wine grapes. Two thousand years old, it is a direct ancestor of many other grapes, including Syrah and Chardonnay.",
+            "id":31,
+            "is_complete":true,
+            "label_image_url":null,
+            "max_serve_temperature":null,
+            "min_serve_temperature":null,
+            "name":"Babcock",
+            "oak":"Neutral oak",
+            "product_id":1567,
+            "slug":"babcock-vineyard-pinot-noir-2014",
+            "soil":"Sandy loam",
+            "sweetness":0,
+            "tannins":5,
+            "taste":"",
+            "year":2014,
+            "varietals":[
+              {
+                "id":1,
+                "name":"Pinot Noir"
+              }
+            ],
+            "vineyard":{
+              "name":"Babcock Vineyard",
+              "id":28,
+              "description":"",
+              "image_url":null,
+              "region_id":7,
+              "created_at":"2016-01-29T02:57:16Z",
+              "updated_at":"2016-01-29T02:57:16Z",
+              "region":{
+                "created_at":"2015-11-17T20:05:42Z",
+                "description":"",
+                "id":7,
+                "image":{
+                  "url":"//media.blueapron.com/regions/7/images/BA_AVA_Map_santa-rita-hills_red.png"
+                },
+                "name":"Santa Rita Hills - Red",
+                "parent_id":null,
+                "updated_at":"2015-11-17T20:05:42Z"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}
