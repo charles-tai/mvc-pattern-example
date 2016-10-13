@@ -6,10 +6,10 @@
   <link href="assets/_defaults/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/_defaults/css/default.css" rel="stylesheet">
   <link href="assets/css/styles.css" rel="stylesheet">
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
 </head>
 
 <body>
-
   <script src="assets/_defaults/js/jquery-1.12.1.min.js"></script>
   <script src="assets/_defaults/js/bootstrap.min.js"></script>
   <script src="assets/_defaults/js/jquery.mockjax.min.js"></script>
@@ -17,5 +17,30 @@
   <script src="assets/_defaults/js/handlebars.js"></script>
   <script src="assets/_defaults/js/handlebars_template.js"></script>
   <script src="assets/js/scripts.js"></script>
+  <h1> Blue Apron Take Home </h1>
+
+  <script id="recipes-template" type="text/x-handlebars-template">
+    {{#each recipes}}
+      {{> recipe}}
+    {{/each}}
+  </script>
+
+  <script id="recipe-template" type="text/x-handlebars-template">
+    <div class="col-md-4">
+      <div class="recipe">
+        <h2 class="recipe__title">{{title}}</h2>
+        <div class="recipe__description">
+          {{{description}}}
+        </div>
+        <button class="btn btn-default">
+          Meow
+        </button>
+      </div>
+    </div>
+  </script>
+
+
+  <div id="container"></div>
 </body>
+
 </html>
