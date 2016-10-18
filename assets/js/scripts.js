@@ -39,7 +39,6 @@ var changePlan = function (event) {
 
 var changeDate = function (event, selected) {
     if (event) event.preventDefault();
-    console.log('event', event)
     recipesModel.setState({ date });
     var date = selected.value;
     var plan = navModel.getState().plan;
@@ -110,7 +109,6 @@ var getPlan = function (plan_type, date) {
   var base = '/api/recipes/';
   var url = base + plan_type + '/' + date;
   $.getJSON(url, function (response) {
-      console.log('response', response);
       var plan = response[plan_type + '_plan'];
       var recipes = plan.recipes;
       recipesModel.setState({
@@ -128,7 +126,6 @@ var getPlan = function (plan_type, date) {
   navModel.registerView(renderNav);
   navModel.setState({plan: 'two_person', date: '2016_03_21'});
   recipesModel.setState({ recipes: []});
-  console.log('getPlan');
   getPlan('two_person','2016_03_21');
 }
 
