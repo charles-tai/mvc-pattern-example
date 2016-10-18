@@ -16,31 +16,73 @@
   <script src="assets/_defaults/js/mocks/mockjax.js"></script>
   <script src="assets/_defaults/js/handlebars.js"></script>
   <script src="assets/_defaults/js/handlebars_template.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
   <script src="assets/js/scripts.js"></script>
   <h1> Blue Apron Take Home </h1>
 
+  <script id="navigation-template" type="text/x-handlebars-template">
+    <div class="container">
+      <div class="content-wrap">
+        <div class="row">
+          <div class="col-md-4 col-md-offset-2">
+            <ul class="nav nav-pills">
+              <li class="active">
+                <a onclick="changePlan(event, 'two_person')" href="">Two Person Plan</a>
+              </li>
+              <li>
+                <a onclick="changePlan(event, 'family')" href="">Family Plan</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-md-4">
+            <select onChange="changeDate(event, this)"class="form-control">
+              <option value="" disabled hidden selected>Choose a week...</option>
+              <option value="2016_03_21">03-21-2016</option>
+              <option value="2016_03_28">03-28-2016</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </script>
+
+
   <script id="recipes-template" type="text/x-handlebars-template">
-    {{#each recipes}}
-      {{> recipe}}
-    {{/each}}
+    <div class="container">
+      <div class="content-wrap">
+        <div class="recipe-group">
+          <h1 class="page-title">{{ planType }} Plan for the Week of {{ date }}</h1>
+            {{#each recipes}}
+              {{> recipe}}
+            {{/each}}
+        </div>
+      </div>
+    </div>
   </script>
 
   <script id="recipe-template" type="text/x-handlebars-template">
     <div class="col-md-4">
       <div class="recipe">
-        <h2 class="recipe__title">{{title}}</h2>
+        <img class="recipe__img" src="{{high_menu_thumb_url}}" alt="Recipe Title">
         <div class="recipe__description">
-          {{{description}}}
+          <h2 class="recipe__title">{{main_title}}</h2>
+          <h3 class="recipe__subtitle">{{sub_title}}</h3>
         </div>
         <button class="btn btn-default">
-          Meow
+          <img class="icon-wine mr-5" src="assets/images/icon-wine.png" alt="">
+          View Wine Pairing
         </button>
       </div>
     </div>
   </script>
 
 
-  <div id="container"></div>
+  <div id="container">
+    <div id="navigation"></div>
+    <div id="recipes"></div>
+  </div>
+
 </body>
 
 </html>
