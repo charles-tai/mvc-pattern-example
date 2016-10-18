@@ -1,41 +1,50 @@
-
+var init = function () {
 // Model
 var Model = function () {
   var state = {};
+  var observers = [];
   var setState = (newState) => {
+    console.log('setState', newState);
     var mergedState = _.extend(state, newState);
     // Notify all views that it has changed
     // trigger re-render
-    render(mergedState);
+    if (observers.length) {
+      observers.forEach((render) => {
+        render(mergedState);
+      })
+    }
+
   };
   var getState = () => {
     return state;
   }
+  var registerView = (render) => {
+    observers.push(render);
+  }
   return {
-    getState: getState,
-    setState: setState
+    getState,
+    setState,
+    registerView
   }
 }
 
-var recipesModel = new Model();
-var navigationModel = new Model();
-
-var changePlan = function (event, plan) {
-    event.preventDefault();
-    var obj = {};
-    navigationModel.setState({ plan });
-    var date = navigationModel.getState().date;
-    // change state
-    getPlan(plan, date)
+var changePlan = function (event) {
+      if (event) event.preventDefault();
+      var plan = $(this).data("value");
+      navModel.setState({ plan });
+      var date = navModel.getState().date;
+      // change state
+      getPlan(plan, date);
 }
 
 var changeDate = function (event, selected) {
-    event.preventDefault();
+    if (event) event.preventDefault();
+    console.log('event', event)
     recipesModel.setState({ date });
     var date = selected.value;
-    var plan = navigationModel.getState().plan;
+    var plan = navModel.getState().plan;
     // change date
-    getPlan(plan, date)
+    getPlan(plan, date);
 }
 
 var constants = {
@@ -43,16 +52,25 @@ var constants = {
   "Family": "Family"
 }
 
-var render = function (state) {
+var renderNav = function (state) {
+  var navigationTemplate = Handlebars.compile($('#navigation-template').html());
+  Handlebars.registerHelper("selected", function(selected) {
+    return selected === state.plan ? 'active' : null;
+  });
+
+  var navigationHTML = navigationTemplate(state);
+  $("#navigation").html(navigationHTML);
+  $("#navigation a").on("click", changePlan);
+}
+
+var renderRecipes = function (state) {
     if (!state.recipes || state.recipes.length < 1) {
       return null;
     }
     var recipes = state.recipes;
-    console.log('state.plan_type', state.plan_type);
     var plan_type = constants[state.plan_type];
     var date = getDate(state.date);
     var recipesTemplate = Handlebars.compile($('#recipes-template').html());
-    var navigationTemplate = Handlebars.compile($('#navigation-template').html());
     // Controller/View
     // Handles rendering (compiling state and event handlers)
     // event handlers
@@ -65,14 +83,8 @@ var render = function (state) {
       }
       return ret;
     });
-    Handlebars.registerHelper("active", function(selected) {
-      return selected === navigationModel.getState().plan ? 'active' : null;
-    });
     var recipesHTML = recipesTemplate({ plan_type, recipes, date });
-    console.log('navigationModel.getState()', navigationModel.getState())
-    var navigationHTML = navigationTemplate(navigationModel.getState());
     $("#recipes").html(recipesHTML);
-    $("#navigation").html(navigationHTML);
 }
 
 var getOrdinal = function (d) {
@@ -109,9 +121,14 @@ var getPlan = function (plan_type, date) {
   });
 }
 
-var init = function () {
-  navigationModel.setState({plan: 'two_person', date: '2016_03_21'});
+
+  var recipesModel = new Model();
+  recipesModel.registerView(renderRecipes);
+  var navModel = new Model();
+  navModel.registerView(renderNav);
+  navModel.setState({plan: 'two_person', date: '2016_03_21'});
   recipesModel.setState({ recipes: []});
+  console.log('getPlan');
   getPlan('two_person','2016_03_21');
 }
 
