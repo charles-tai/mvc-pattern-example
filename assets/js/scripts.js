@@ -6,7 +6,6 @@ var Model = function () {
     var mergedState = _.extend(state, newState);
     // Notify all views that it has changed
     // trigger re-render
-    console.log('mergedState', mergedState);
     render(mergedState);
   };
   var getState = () => {
@@ -19,19 +18,24 @@ var Model = function () {
 }
 
 var recipesModel = new Model();
-var pickerModel = new Model();
+var navigationModel = new Model();
 
 var changePlan = function (event, plan) {
     event.preventDefault();
+    var obj = {};
+    navigationModel.setState({ plan });
+    var date = navigationModel.getState().date;
     // change state
-    getPlan(plan, pickerModel.getState().date)
+    getPlan(plan, date)
 }
 
 var changeDate = function (event, selected) {
     event.preventDefault();
+    recipesModel.setState({ date });
     var date = selected.value;
+    var plan = navigationModel.getState().plan;
     // change date
-    getPlan(pickerModel.getState().plan, date)
+    getPlan(plan, date)
 }
 
 var constants = {
@@ -44,7 +48,7 @@ var render = function (state) {
       return null;
     }
     var recipes = state.recipes;
-    console.log('recipes', recipes);
+    console.log('state.plan_type', state.plan_type);
     var plan_type = constants[state.plan_type];
     var date = getDate(state.date);
     var recipesTemplate = Handlebars.compile($('#recipes-template').html());
@@ -61,8 +65,12 @@ var render = function (state) {
       }
       return ret;
     });
+    Handlebars.registerHelper("active", function(selected) {
+      return selected === navigationModel.getState().plan ? 'active' : null;
+    });
     var recipesHTML = recipesTemplate({ plan_type, recipes, date });
-    var navigationHTML = navigationTemplate({ selected: "two_person" });
+    console.log('navigationModel.getState()', navigationModel.getState())
+    var navigationHTML = navigationTemplate(navigationModel.getState());
     $("#recipes").html(recipesHTML);
     $("#navigation").html(navigationHTML);
 }
@@ -102,8 +110,8 @@ var getPlan = function (plan_type, date) {
 }
 
 var init = function () {
-  pickerModel.setState({plan: 'two_person', date: '2016_03_21'});
-  recipesModel.setState({recipes: []});
+  navigationModel.setState({plan: 'two_person', date: '2016_03_21'});
+  recipesModel.setState({ recipes: []});
   getPlan('two_person','2016_03_21');
 }
 

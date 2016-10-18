@@ -26,10 +26,10 @@
         <div class="row">
           <div class="col-md-4 col-md-offset-2">
             <ul class="nav nav-pills">
-              <li class="active">
+              <li class="{{ active 'two_person' }}">
                 <a onclick="changePlan(event, 'two_person')" href="">Two Person Plan</a>
               </li>
-              <li>
+              <li class="{{ active 'family' }}">
                 <a onclick="changePlan(event, 'family')" href="">Family Plan</a>
               </li>
             </ul>
@@ -52,7 +52,7 @@
     <div class="container">
       <div class="content-wrap">
         <div class="recipe-group">
-          <h1 class="page-title">{{ planType }} Plan for the Week of {{ date }}</h1>
+          <h1 class="page-title">{{ plan_type }} Plan for the Week of {{ date }}</h1>
             {{#each recipes}}
               {{> recipe}}
             {{/each}}
