@@ -44,31 +44,27 @@ App.Controller = (RecipesModel, NavModel, RecipesView, NavView, WineView, ModalM
         getPlan(plan, date);
     }
 
-    var init = function () {
-        RecipesModel.register(RecipesView);
-        // TODO: Consolidate
-        NavModel.register(NavView);
-        NavModel.register(this);
-        ModalModel.register(WineView);
-        NavModel.setState({plan: 'two_person', date: '2016_03_21'});
-        RecipesModel.setState({ recipes: [] });
-        getPlan('two_person','2016_03_21');
-    }
-
-    var render = () => {
-        // Make sure that all views are rendered BEFORE we attach event handlers
-        $("#setPlan a").on("click", setPlan);
-        $("#setDate").on("change", setDate);
-        // TODO Hack
-        $('#wine-modal').on('show.bs.modal', function (event) {
-          var button = $(event.relatedTarget)
-          var pairing_id = button.data('pairing-id')
-          getWinePairing(pairing_id);
-        })
-    }
-
     return {
-      render,
-      init
+      init: function () {
+          RecipesModel.register(RecipesView);
+          // TODO: Consolidate
+          NavModel.register(NavView);
+          NavModel.register(this);
+          ModalModel.register(WineView);
+          NavModel.setState({plan: 'two_person', date: '2016_03_21'});
+          RecipesModel.setState({ recipes: [] });
+          getPlan('two_person','2016_03_21');
+      },
+      render: function () {
+          // Make sure that all views are rendered BEFORE we attach event handlers
+          // Make better IDs for selectors
+          $("#setPlan a").on("click", setPlan);
+          $("#setDate").on("change", setDate);
+          $('#wine-modal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget)
+            var pairing_id = button.data('pairing-id')
+            getWinePairing(pairing_id);
+          })
+      }
     }
 }
