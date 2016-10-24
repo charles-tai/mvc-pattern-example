@@ -1,8 +1,7 @@
-App.WineView = () => {
+App.WineView = function () {
+  var wineTemplate = Handlebars.compile($('#wine-template').html());
   return {
     render: function (state) {
-      console.log('state', state);
-      var wineTemplate = Handlebars.compile($('#wine-template').html());
       var wineHTML = wineTemplate(state);
       $("#wine-description").html(wineHTML);
     }

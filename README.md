@@ -68,8 +68,8 @@ localhost:8080
 ### Additional Notes:
 
 * Developer should assume additional recipe weeks and wines pairings will be regularly added.
-* It's up to the developer to decided how they want to design the application and these features, there is no preferred way.
-* Please refrain from using any javascript framework (or library that serves a similar purpose). 
+* It's up to the developer to decided how they want to design the application and these features, there is no preferred way.    
+* Please refrain from using any javascript framework (or library that serves a similar purpose).
  * examples: Ember, Angular, React, Backbone, etc.
 * You are free to use any library, templating engine, etc. *as long as it doesn't implement one of the features in the spec for you*.
   * **If you use any additional third-party code, make sure to explicity explain why you chose to include it, why you felt it was necessary, and why it is the right tool for the job.**

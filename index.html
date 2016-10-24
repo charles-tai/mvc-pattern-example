@@ -23,8 +23,7 @@
   <script src="assets/js/WineView.js"></script>
   <script src="assets/js/Model.js"></script>
   <script src="assets/js/Controller.js"></script>
-
-  <h1> Blue Apron Take Home </h1>
+  <script src="assets/js/Service.js"></script>
 
   <script id="navigation-template" type="text/x-handlebars-template">
     <div class="container">
@@ -32,10 +31,10 @@
         <div class="row">
           <div id="setPlan" class="col-md-4 col-md-offset-2">
             <ul class="nav nav-pills">
-              <li class="{{ selected 'two_person' }}">
+              <li class="{{ selected 'two_person' plan }}">
                 <a data-value="two_person" href="">Two Person Plan</a>
               </li>
-              <li class="{{ selected 'family' }}">
+              <li class="{{ selected 'family' plan }}">
                 <a data-value="family" href="">Family Plan</a>
               </li>
             </ul>
@@ -53,33 +52,43 @@
     </div>
   </script>
 
+
   <script id="recipes-template" type="text/x-handlebars-template">
     <div class="container">
       <div class="content-wrap">
         <div class="recipe-group">
-          <h1 class="page-title">{{ plan_type }} Plan for the Week of {{ date }}</h1>
-            {{#each recipes}}
-              {{> recipe}}
-            {{/each}}
+            <h1 class="page-title">{{ plan_type }} Plan for the Week of {{ date }}</h1>
+              {{#each recipes}}
+                {{> recipe}}
+              {{/each}}
         </div>
       </div>
     </div>
   </script>
 
   <script id="recipe-template" type="text/x-handlebars-template">
-    <div class="col-md-4">
+    <div class="flexItem col-md-4">
       <div class="recipe">
         <img class="recipe__img" src="{{high_menu_thumb_url}}" alt="Recipe Title">
         <div class="recipe__description">
           <h2 class="recipe__title">{{main_title}}</h2>
           <h3 class="recipe__subtitle">{{sub_title}}</h3>
         </div>
-        <div id="wineModalButton">
-          <button data-toggle="modal" data-target="#wine-modal" data-pairing-id="{{wine_pairing_id}}" class="btn btn-default">
-            <img class="icon-wine mr-5" src="assets/images/icon-wine.png" alt="">
-            View Wine Pairing
-          </button>
-        </div>
+        {{#if wine_pairing_id}}
+            <button class="btn btn-default"
+                    data-toggle="modal"
+                    data-target="#wine-modal"
+                    data-pairing-id="{{wine_pairing_id}}">
+              <img class="icon-wine mr-5" src="assets/images/icon-wine.png" alt="">
+              View Wine Pairing
+            </button>
+        {{else}}
+            <button class="btn btn-default" disabled>
+              <img class="icon-wine mr-5" src="assets/images/icon-wine.png" alt="">
+              {{wine_pairing_id}}
+              View Wine Pairing
+            </button>
+        {{/if}}
       </div>
     </div>
   </script>
@@ -126,17 +135,17 @@
     var RecipesModel = App.Model();
     var NavModel = App.Model();
     var ModalModel = App.Model();
+    var Service = App.Service();
 
-    var RecipesView = App.RecipesView();
+    var RecipesView = App.RecipesView(RecipesModel);
     var NavView = App.NavView();
     var WineView = App.WineView();
 
-    var Controller = App.Controller(RecipesModel, NavModel, RecipesView, NavView, WineView, ModalModel);
+    var Controller = App.Controller(RecipesModel, NavModel, RecipesView, NavView, WineView, ModalModel, Service);
 
     Controller.init();
   });
   </script>
-
 
   <div id="container">
     <div id="navigation"></div>
@@ -146,9 +155,9 @@
       <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div id="wine-description"></div>
-        </div><!-- /.modal-content -->
-      </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
+        </div>
+      </div>
+    </div>
   </div>
 </body>
 
