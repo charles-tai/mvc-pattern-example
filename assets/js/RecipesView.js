@@ -1,34 +1,34 @@
-App.RecipesView = (RecipesModel) => {
-    // TODO: Find out if this is global
-    // Register recipe partial so that it is available when we compile the recipes template
+App.RecipesView = (recipesModel) => {
+    var recipesTemplate = Handlebars.compile($('#recipes-template').html());
     Handlebars.registerPartial('recipe', $('#recipe-template').html());
-    Handlebars.registerHelper('each', function(recipes, options) {
+    Handlebars.registerHelper('eachRow', function(items, itemsPerRow, options) {
       var row = [];
-      var recipeList = [];
-      for (var i = 0; i < recipes.length; i++) {
-        row.push(recipes[i]);
-        if ((i+1)%3===0){
-            recipeList.push(row);
+      var list = [];
+      for (var i = 0; i < items.length; i++) {
+        row.push(items[i]);
+        if ((i+1)%itemsPerRow===0){
+            list.push(row);
             var row = [];
         }
       }
+      if ((i+1)%itemsPerRow!==0) list.push(row);
       var ret = "";
-      for (var j = 0; j < recipeList.length; j++) {
+      for (var j = 0; j < list.length; j++) {
         var row = '<div class="flex row">';
-        for (var k = 0; k < recipeList[j].length; k++) {
-            var recipe = recipeList[j][k].recipe;
-            row += options.fn(recipe);
+        for (var k = 0; k < list[j].length; k++) {
+            var item = list[j][k];
+            row += options.fn(item);
         }
         row += '</div>';
         ret += row;
       }
       return ret;
     });
-    var recipesTemplate = Handlebars.compile($('#recipes-template').html());
 
-    var getOrdinal = function (d) {
-      if(d>3 && d<21) return 'th';
-      switch (d % 10) {
+    // Helper functions to display correct date format
+    var getOrdinal = function (date) {
+      if(date>3 && date<21) return 'th';
+      switch (date % 10) {
             case 1:  return "st";
             case 2:  return "nd";
             case 3:  return "rd";
@@ -50,13 +50,15 @@ App.RecipesView = (RecipesModel) => {
 
     return {
       render: function (state) {
-          var { recipes, plan_type, date } = RecipesModel.getState();
+          var { recipes, plan_type, date} = recipesModel.getState();
+          recipes = recipes.map((recipe)=> {return recipe.recipe});
+          var itemsPerRow = plan_type === '2-Person' ? 3 : 2;
           if (!recipes || recipes.length < 1) {
             return null;
           }
           var plan_type = constants[plan_type];
           var date = getDate(date);
-          var recipesHTML = recipesTemplate({ plan_type, recipes, date });
+          var recipesHTML = recipesTemplate({ plan_type, recipes, date, itemsPerRow  });
           $("#recipes").html(recipesHTML);
       }
     }

@@ -8,28 +8,22 @@ App.Model = function () {
       })
     }
   }
-  var setState = (newState) => {
-    // Shallow
-    var mergedState = _.extend(state, newState);
-    // Notify all views that it has set
-    // TODO: Check if new state is different from old, if it is the same then no need to re-render
-    // trigger re-render
-    publish(mergedState);
-  };
-  var getState = () => {
-    return state;
-  }
-  var resetState = () => {
-    publish({});
-  }
-  var register = (view) => {
-    // TODO: make sure a view can only subscribe once
-    subscribers.push(view);
-  }
   return {
-    resetState,
-    getState,
-    setState,
-    register
+    resetState: () => {
+      publish({});
+    },
+    getState: () => {
+      return state;
+    },
+    setState: (newState) => {
+      var mergedState = _.extend(state, newState);
+      // Notify all subscribed views that state has changed
+      publish(mergedState);
+    },
+    register: function(...args) {
+        args.forEach((view) => {
+            subscribers.push(view);
+        });
+    }
   }
 }

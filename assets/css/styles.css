@@ -1,9 +1,10 @@
 .flex {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
-.flexItem {
+.flex-item {
     display: flex;
     flex-direction: column;
 }

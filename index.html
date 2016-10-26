@@ -23,7 +23,6 @@
   <script src="assets/js/WineView.js"></script>
   <script src="assets/js/Model.js"></script>
   <script src="assets/js/Controller.js"></script>
-  <script src="assets/js/Service.js"></script>
 
   <script id="navigation-template" type="text/x-handlebars-template">
     <div class="container">
@@ -58,16 +57,16 @@
       <div class="content-wrap">
         <div class="recipe-group">
             <h1 class="page-title">{{ plan_type }} Plan for the Week of {{ date }}</h1>
-              {{#each recipes}}
+              {{#eachRow recipes itemsPerRow}}
                 {{> recipe}}
-              {{/each}}
+              {{/eachRow}}
         </div>
       </div>
     </div>
   </script>
 
   <script id="recipe-template" type="text/x-handlebars-template">
-    <div class="flexItem col-md-4">
+    <div class="flex-item col-md-4">
       <div class="recipe">
         <img class="recipe__img" src="{{high_menu_thumb_url}}" alt="Recipe Title">
         <div class="recipe__description">
@@ -92,7 +91,6 @@
       </div>
     </div>
   </script>
-
   <script id="wine-template" type="text/x-handlebars-template">
     <div class="modal-header">
       <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -102,26 +100,30 @@
         <div class="row">
           <div class="col-md-8 col-md-offset-2">
             <div class="wine">
-              <h2 class="wine__title text-center">
-                <img class="mr-10" src="../assets/images/icon-wine-lg.png" alt="">
-                {{name}} {{varietals_name}} {{year}}
-              </h2>
+              {{#if name}}
+                  <h2 class="wine__title text-center">
+                    <img class="mr-10" src="../assets/images/icon-wine-lg.png" alt="">
+                    {{name}} {{varietals_name}} {{year}}
+                  </h2>
 
-              <div class="row">
-                <div class="col-md-4 text-center">
-                  <img class="mr-10" width="100px" src="{{bottle_image_url}}" alt="">
-                </div>
+                  <div class="row">
+                    <div class="col-md-4 text-center">
+                      <img class="mr-10" width="100px" src="{{bottle_image_url}}" alt="">
+                    </div>
 
-                <div class="col-md-8">
-                  <h4>Description</h4>
-                  <p>{{description}}</p>
+                    <div class="col-md-8">
+                      <h4>Description</h4>
+                      <p>{{description}}</p>
 
-                  <div class="fun-fact">
-                    <h4 class="fun-fact__title">Fun Fact</h4>
-                    <p>{{fun_facts}}</p>
+                      <div class="fun-fact">
+                        <h4 class="fun-fact__title">Fun Fact</h4>
+                        <p>{{fun_facts}}</p>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
+              {{else}}
+                  <div></div>
+              {{/if}}
             </div>
           </div>
         </div>
@@ -129,21 +131,21 @@
     </div>
   </script>
 
+
   <script>
   document.addEventListener('DOMContentLoaded', function () {
 
-    var RecipesModel = App.Model();
-    var NavModel = App.Model();
-    var ModalModel = App.Model();
-    var Service = App.Service();
+    var recipesModel = App.Model();
+    var navModel = App.Model();
+    var modalModel = App.Model();
 
-    var RecipesView = App.RecipesView(RecipesModel);
-    var NavView = App.NavView();
-    var WineView = App.WineView();
+    var recipesView = App.RecipesView(recipesModel);
+    var navView = App.NavView();
+    var wineView = App.WineView();
 
-    var Controller = App.Controller(RecipesModel, NavModel, RecipesView, NavView, WineView, ModalModel, Service);
+    var controller = App.Controller(recipesModel, navModel, recipesView, navView, wineView, modalModel);
 
-    Controller.init();
+    controller.init();
   });
   </script>
 

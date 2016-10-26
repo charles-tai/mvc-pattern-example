@@ -1,5 +1,21 @@
 # Take Home Test
 
+# Design Decisions
+
+I used a MVC pattern to add structure and to avoid spaghetti code as the application grows. MVC allows for separation of concerns, which is important in application maintainability.
+
+Controllers handle user input, data retrieval and model updates. Models manage application state. And views update the DOM.
+
+Model states are transmitted to the rest of the application using a pub/sub pattern. This pattern decouples views from models and allows for a one to many relationship between them. As a result, models can be reused and show the same state across different views.
+
+# Improvements
+
+- HTML/CSS
+- Module loading using ES6 require to handle dependencies
+- Handlebars templates could be separated into their own files, precompiled and cached (?)
+- Error handling for API calls
+- Service Factory to decouple API calls from the controller
+
 ## Instructions
 
 Using the HTML, CSS, and mocked API that has been provided for you, your job is to write javascript that drives the view layer of a Blue Apron menu page according to the spec below.
