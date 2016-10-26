@@ -1,17 +1,18 @@
 App.NavView = () => {
   var navigationTemplate = Handlebars.compile($('#navigation-template').html());
-  Handlebars.registerHelper("selected", function(selected, plan) {
-    return selected === plan ? 'active' : null;
+  Handlebars.registerHelper("selected", function(a, b) {
+    return a === b ? 'active' : null;
   });
 
   return {
-    getDOM: function () {
+    getDOM: () => {
       return {
           setPlan: $("#navigation #setPlan a"),
-          setDate: $("#setDate")
+          setDate: $("#setDate"),
+          selectedOption: $( "#setDate option:selected" )
       }
     },
-    render: function (state) {
+    render: (state) => {
       var navigationHTML = navigationTemplate(state);
       $("#navigation").html(navigationHTML);
     }

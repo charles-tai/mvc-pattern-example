@@ -1,20 +1,24 @@
 # Take Home Test
 
-# Design Decisions
+# Design Decisions / Improvements
 
 I used a MVC pattern to add structure and to avoid spaghetti code as the application grows. MVC allows for separation of concerns, which is important in application maintainability.
 
 Controllers handle user input, data retrieval and model updates. Models manage application state. And views update the DOM.
 
-Model states are transmitted to the rest of the application using a pub/sub pattern. This pattern decouples views from models and allows for a one to many relationship between them. As a result, models can be reused and show the same state across different views.
+MVC relies on pub/sub as its core communication. It is used to transmit model state to the rest of the application. Pub/sub decouples views from models and allows for a one to many relationship between them. As a result, models can be reused and show the same state across different views. This decoupling also makes it easier to test models.
 
-# Improvements
+There are some disadvantages to this implementation. Since all input is handled within the controller, it could become bloated if we add more interactive elements to the page. Also, frequent changes to the model could cause unnecessary re-rendering.
 
-- HTML/CSS
-- Module loading using ES6 require to handle dependencies
-- Handlebars templates could be separated into their own files, precompiled and cached (?)
-- Error handling for API calls
-- Service Factory to decouple API calls from the controller
+There's a lot of improvements that could be made to this application. I've listed some below:
+
+* Cosmetic polishing
+* We could consider loading all the data upfront
+* Module loading to handle dependencies
+* Handlebars templates could be separated into their own files, precompiled and cached
+* Error handling
+* Service to handle API calls
+* Separate file for Helper functions/constants
 
 ## Instructions
 
